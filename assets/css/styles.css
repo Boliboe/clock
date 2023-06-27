@@ -58,3 +58,73 @@ body{
 a{
     text-decoration: none;
 }
+
+/* css classes */
+.container{
+    max-width: 768px;
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+}
+
+.grid{
+    display: grid;
+}
+
+/* clock styles */
+.clock-container{
+    height: 100vh;
+    grid-template-rows: 1fr max-content;
+}
+
+.clock-circle{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    box-shadow: -6px -6px 16px var(--white-color),
+                6px 6px 16px hsla(var(--hue-color), 30%, 86%, 1),
+                inset 6px 6px 16px hsla(var(--hue-color), 30%, 86%, 1),
+                inset -6px -6px 16px var(--white-color);
+    border-radius: 50%;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-content{
+    align-self: center;
+    row-gap: 3.5rem;
+}
+
+.clock-twelve,
+.clock-three,
+.clock-six,
+.clock-nine{
+    position: absolute;
+    width: 1rem;
+    height: 1px;
+    background-color: var(--text-color-light);
+}
+
+.clock-twelve,
+.clock-six{
+    transform: translateX(-50%) rotate(90deg);
+}
+
+.clock-twelve{
+    top: 1.25rem;
+    left: 50%;
+}
+
+.clock-three{
+    top: 50%;
+    right: .75rem;
+}
+.clock-six{
+    bottom: 1.25rem;
+    left: 50%;
+}
+.clock-nine{
+    top: 50%;
+    left: .75rem;
+}
