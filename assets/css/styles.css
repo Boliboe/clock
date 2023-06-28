@@ -204,3 +204,15 @@ a{
 .clock-logo{
     color: var(--first-color);
 }
+
+.clock-text{
+    display: flex;
+    justify-content: center;
+}
+
+.clock-text-hour,
+.clock-text-minutes{
+    font-size: var(--biggest-font-size);
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+}
