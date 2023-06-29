@@ -30,17 +30,38 @@ const textHour = document.getElementById('text-hour'),
 
 const clockText = () =>{
     let date = new Date()
-
+    
     let hh = date.getHours(),
         mm = date.getMinutes(),
         ampm,
         day = date.getDate(),
         month = date.getMonth(),
-        year = date.getFullYear
+        year = date.getFullYear()
+
+        if(hh >= 12){
+            hh = hh - 12
+            ampm = 'PM'
+        }else{
+            ampm = 'AM'
+        }
+        if(hh == 0){hh = 12}
+
+if(hh < 10){hh = `0${hh}`}
+
+textHour.innerHTML = `${hh}:`
+
+if (mm < 10){mm = `0{mm}`}
+
+textMinutes.innerHTML = mm
+
+textAmPm.innerHTML = ampm
+
+let months = ['January','February','March','April','May','June','July','August','September','October','November','December']
+
+
+dateDay.innerHTML = day
+dateMonth.innerHTML = `${months[month]}`
+dateYear.innerHTML = year
 }
-
-
-
-textHour.innerHTML = `${hh}`
 
 setInterval(clockText, 1000)

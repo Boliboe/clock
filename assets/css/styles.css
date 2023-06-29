@@ -41,6 +41,22 @@
     }
 }
 
+/* dark theme */
+body.dark-theme{
+    --title-color: hsl(var(--hue-color), 12%, 95%);
+    --text-color: hsl(var(--hue-color), 12%, 75%);
+    --body-color: hsl(var(--hue-color), 10%, 16%);
+}
+
+/* switch dark/light theme */
+.clock-theme{
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    display: flex;
+    padding: .25rem;
+}
+
 /* Base styles */
 *{
     box-sizing: border-box;
