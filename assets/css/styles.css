@@ -2,7 +2,7 @@
 
 :root{
     /* colors */
-    --hue-color: 240; /* Blue 240 - Green 154 - Orange 25*/
+    --hue-color: 25; /* Blue 240 - Green 154 - Orange 25*/
 
     --first-color: hsl(var(--hue-color), 53%, 49%);
     --title-color: hsl(var(--hue-color), 53%, 15%);
@@ -48,6 +48,18 @@ body.dark-theme{
     --body-color: hsl(var(--hue-color), 10%, 16%);
 }
 
+.dark-theme .clock-circle{
+    box-shadow: 6px 6px 16px hsla(var(--hue-color), 8%, 12%, 1),
+                -6px -6px 16px hsla(var(--hue-color), 8%, 20%, 1),
+               inset -6px -6px 16px hsla(var(--hue-color), 8%, 20%, 1),
+               inset 6px 6px 12px hsla(var(--hue-color), 8%, 12%, 1);
+}
+
+.dark-theme .clock-theme{
+    box-shadow: inset -1px -1px 1px hsla(var(--hue-color), 8%, 20%, 1),
+                inset 1px 1px 1px hsla(var(--hue-color), 8%, 12%, 1),;
+}
+
 /* switch dark/light theme */
 .clock-theme{
     position: absolute;
@@ -55,6 +67,11 @@ body.dark-theme{
     right: -1rem;
     display: flex;
     padding: .25rem;
+    border-radius: 50%;
+    box-shadow: inset -1px -1px 1px hsla(var(--hue-color), 0%, 100%, 1),
+                inset 1px 1px 1px hsla(var(--hue-color), 30%, 86%, 1);
+    color: var(--first-color);
+    cursor: pointer;
 }
 
 /* Base styles */
@@ -244,4 +261,16 @@ a{
     text-align: center;
     font-size: var(--small-font-size);
     font-weight: var(--font-medium);
+}
+
+/* media querries */
+@media screen and (min-width:968px){
+    .container{
+        margin: auto;
+        margin-right: auto;
+    }
+
+    .clock-logo{
+        margin-bottom: 3rem;
+    }  
 }
